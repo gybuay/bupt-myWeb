@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+    <title>MyWeb</title>
+    
+	<style>
+		.custom-restricted-width {
+			/* To limit the menu width to the content of the menu: */
+			display: inline-block;
+			/* Or set the width explicitly: */
+			/* width: 10em; */
+		}
+		p {font-family: sansserif;}
+
+	</style>
+
+    <link rel="stylesheet" href="../../static/css/layouts/pure.css" integrity="sha384-" crossorigin="anonymous">
+    
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="../../static/css/layouts/grids-responsive.css">
+    <!--<![endif]-->
+    
+    
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/blog-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="../../static/css/layouts/blog.css">
+        <!--<![endif]-->
+			<link rel="stylesheet" href="../../static/css/layouts/menus.css">
+</head>
+<body>
+
+
+
+
+
+
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-5">
+		
+        <div class="header">
+			<div class="post-images pure-u-1 pure-u-md-3-5 "><img width="148" height="148" alt="photo" class="post-avatar" src="../../static/img/common/0.jpg"></div>
+            
+			<h1 class="brand-title">欧宝源</h1>
+            <h2 class="brand-tagline">学号：2015211324</h2>
+			<h2 class="brand-tagline">班级：2015211307</h2>
+
+            <div class="pure-menu custom-restricted-width">
+                <span class="pure-menu-heading">生命不息</span>
+
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item"><a href="/index/" class="pure-menu-link">上传与下载</a></li>
+                    <li class="pure-menu-item"><a href="/exam1/" class="pure-menu-link">实验一</a></li>
+                    <li class="pure-menu-item"><a href="/exam2/" class="pure-menu-link">实验二</a></li>
+                    <li class="pure-menu-item"><a href="/exam3/" class="pure-menu-link">实验三</a></li>
+                    <li class="pure-menu-item"><a href="/exam4/" class="pure-menu-link">实验四</a></li>
+                    <li class="pure-menu-heading">传火不止</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-2-3">
+        <div>
+
+            <div class="posts">
+                <h1 class="content-subhead">实验二 图像处理</h1>
+
+                <section class="post">
+                    <header class="post-header">
+                        <img width="48" height="48" class="post-myphoto" src="../../static/img/common/1.png">
+                        <h2 class="post-title">实验要求</h2>
+                    </header>
+
+                    <div class="post-description">
+                        <p>
+                            选取适当的图片素材和世界地图，运用各种选取方法制作一幅由世界名胜照片揉和在一起的背景。利用图层效果制作一幅有地形质感的世界地图。调整并合并所有层存储为各种图像文件格式并压缩。
+                        </p>
+                        <p>
+                            显示一个bmp文件的C程序，并实现图像亮度、对比度调整、图像平移、放大、旋转和镜像。
+                        </p>
+                    </div>
+                </section>
+				
+				<hr>
+
+                <section class="post">
+                    <header class="post-header">
+                        <img width="48" height="48" class="post-myphoto" src="../../static/img/common/2.png">
+                        <h2 class="post-title">提交内容</h2>
+                    </header>
+
+					<div class="post-description">
+                        <p>
+                            图片素材、合成图片、显示bmp的程序代码、显示bmp的可执行文件、实验报告（电子版+打印版）。
+                        </p>
+                    </div>
+                </section>
+				
+				<hr>
+
+                <section class="post">
+                    <header class="post-header">
+                        <img width="48" height="48" class="post-myphoto" src="../../static/img/common/3.png">
+
+                        <h2 class="post-title">作品</h2>
+
+                    </header>
+
+                    <div class="post-images "><img alt="photo"  src="../../static/img/common/5.png"></div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

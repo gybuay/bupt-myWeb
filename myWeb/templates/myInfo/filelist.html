@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+    <title>MyWeb</title>
+
+	<style>
+		.custom-restricted-width {
+			/* To limit the menu width to the content of the menu: */
+			display: inline-block;
+			/* Or set the width explicitly: */
+			/* width: 10em; */
+		}
+
+
+       .a-upload {
+    padding: 4px 10px;
+    height: 35px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+
+
+		p {font-family: sansserif;}
+        ul {font-family: sansserif;}
+        li {font-family: sansserif;}
+	</style>
+
+    <link rel="stylesheet" href="../../static/css/layouts/pure.css" integrity="sha384-" crossorigin="anonymous">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="../../static/css/layouts/grids-responsive.css">
+    <!--<![endif]-->
+
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/blog-old-ie.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+            <link rel="stylesheet" href="../../static/css/layouts/blog.css">
+        <!--<![endif]-->
+			<link rel="stylesheet" href="../../static/css/layouts/menus.css">
+</head>
+<body>
+
+
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-5">
+
+        <div class="header">
+			<div class="post-images pure-u-1 pure-u-md-3-5 "><img width="148" height="148" alt="photo" class="post-avatar" src="../../static/img/common/0.jpg"></div>
+
+			<h1 class="brand-title">欧宝源</h1>
+            <h2 class="brand-tagline">学号：2015211324</h2>
+			<h2 class="brand-tagline">班级：2015211307</h2>
+
+
+<div class="pure-menu custom-restricted-width">
+    <span class="pure-menu-heading">生命不息</span>
+
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="/index/" class="pure-menu-link">上传与下载</a></li>
+        <li class="pure-menu-item"><a href="/exam1/" class="pure-menu-link">实验一</a></li>
+        <li class="pure-menu-item"><a href="/exam2/" class="pure-menu-link">实验二</a></li>
+        <li class="pure-menu-item"><a href="/exam3/" class="pure-menu-link">实验三</a></li>
+        <li class="pure-menu-item"><a href="/exam4/" class="pure-menu-link">实验四</a></li>
+		<li class="pure-menu-heading">传火不止</li>
+    </ul>
+</div>
+            <!--<nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="pure-button" href="http://purecss.io">Pure</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="http://yuilibrary.com">YUI Library</a>
+                    </li>
+                </ul>
+            </nav>-->
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-2-3">
+        <div>
+            <!-- A wrapper for all the blog posts -->
+
+
+            <div class="posts">
+                <h1 class="content-subhead">服务器上传文件夹路径在项目的static/upload/中</h1>
+
+                <section class="post">
+                    <header class="post-header">
+                        <img width="48" height="48" alt="Eric Ferraiuolo&#x27;s avatar" class="post-myphoto" src="../../static/img/common/4.png">
+
+                        <h2 class="post-title">文件列表</h2>
+
+                    </header>
+
+
+
+                    <div class="pure-menu custom-restricted-width">
+
+                        <ul class="pure-menu-list">
+                        {% for e in path %}
+                            <li class="pure-menu-item"><a href=" {{ download }}{{ e }} " class="pure-menu-link">{{ e }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </section>
+
+
+                    <form enctype="multipart/form-data" action="/uploadFile/" method="post">
+                        {% csrf_token %}
+                       <input type="file" name="myfile" class = "a-upload pure-u pure-u-1-5"/>
+                       <br/>
+                        <br/>
+                       <input type="submit" value="确认" class = "a-upload pure-u pure-u-1-5"/>
+                    </form>
+
+                    {% if messages %}
+                        <script>
+                            {% for msg in messages %}
+                                alert('{{ msg.message }}');
+                            {% endfor %}
+                        </script>
+                    {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
